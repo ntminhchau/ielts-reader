@@ -22,18 +22,21 @@
       "passage": "Cats are often kept as pets. Some breeds require more grooming than others. Unlike dogs, most cats are independent and can be left alone longer.",
       "questions": [
         {
-          "type": "truefalse",
-          "question": "Cats need constant attention.",
-          "answer": "False"
+           "type": "truefalse",
+  "question": "Cats need constant attention.",
+  "options": ["True", "False", "Not Given"],
+  "answer": "False"
         },
         {
           "type": "truefalse",
           "question": "Cats are often more independent than dogs.",
+          "options": ["True", "False", "Not Given"],
           "answer": "True"
         },
         {
           "type": "truefalse",
           "question": "All cats require the same grooming.",
+          "options": ["True", "False", "Not Given"],
           "answer": "Not Given"
         }
       ]
