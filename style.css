@@ -1,1 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
 
+h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+input[type="text"] {
+  width: 300px;
+  margin: 5px 0;
+}
+
+.correct {
+  background-color: #d4edda;
+}
+
+.incorrect {
+  background-color: #f8d7da;
+}
