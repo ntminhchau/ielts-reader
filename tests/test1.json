@@ -1,35 +1,45 @@
 {
   "title": "Sample IELTS Reading Test 1",
-  "passage": "There are few places in the world where relations between agriculture and conservation are more strained. Madagascar’s forests are being converted to agricultural land at a rate of one percent every year. Much of this destruction is fuelled by the cultivation of the country’s main staple crop: rice. And a key reason for this destruction is that insect pests are destroying vast quantities of what is grown by local subsistence farmers, leading them to clear forest to create new paddy fields. The result is devastating habitat and biodiversity loss on the island, but not all species are suffering. In fact, some of the island’s insectivorous bats are currently thriving and this has important implications for farmers and conservationists alike. nter University of Cambridge zoologist Ricardo Rocha. He’s passionate about conservation, and bats. More specifically, he’s interested in how bats are responding to human activity and deforestation in particular. Rocha’s new study shows that several species of bats are giving Madagascar’s rice farmers a vital pest control service by feasting on plagues of insects. And this, he believes, can ease the financial pressure on farmers to turn forest into fields. Bats comprise roughly one-fifth of all mammal species in Madagascar and thirty-six recorded bat species are native to the island, making it one of the most important regions for conservation of this animal group anywhere in the world.",
+  "passage": "There are few places in the world where relations between agriculture and conservation are more strained. Madagascar’s forests are being converted to agricultural land at a rate of one percent every year. Much of this destruction is fuelled by the cultivation of the country’s main staple crop: rice. And a key reason for this destruction is that insect pests are destroying vast quantities of what is grown by local subsistence farmers, leading them to clear forest to create new paddy fields. The result is devastating habitat and biodiversity loss on the island, but not all species are suffering. In fact, some of the island’s insectivorous bats are currently thriving and this has important implications for farmers and conservationists alike. Enter University of Cambridge zoologist Ricardo Rocha. He’s passionate about conservation, and bats. More specifically, he’s interested in how bats are responding to human activity and deforestation in particular. Rocha’s new study shows that several species of bats are giving Madagascar’s rice farmers a vital pest control service by feasting on plagues of insects. And this, he believes, can ease the financial pressure on farmers to turn forest into fields. Bats comprise roughly one-fifth of all mammal species in Madagascar and thirty-six recorded bat species are native to the island, making it one of the most important regions for conservation of this animal group anywhere in the world.",
   "questions": [
     {
-      "type": "true_false_not_given",
+      "type": "truefalse",
       "question": "Coffee was first discovered in South America.",
+      "options": ["True", "False", "Not Given"],
       "answer": "False"
     },
     {
-      "type": "multiple_choice",
+      "type": "multiple",
       "question": "Which region was the first to cultivate coffee?",
-      "options": [
-        "Europe",
-        "Ethiopia",
-        "South America",
-        "Southeast Asia"
-      ],
+      "options": ["Europe", "Ethiopia", "South America", "Southeast Asia"],
       "answer": "Ethiopia"
     },
     {
-      "type": "fill_in_blank",
-      "question": "Coffee spread to the Arabian Peninsula and then to ____.",
+      "type": "fill",
+      "question": "Coffee spread to the Arabian Peninsula and then to ____. ",
       "answer": "Europe"
     },
     {
       "type": "matching",
       "question": "Match each century with a development in coffee history.",
-      "pairs": {
-        "17th century": "Coffeehouses became popular in England",
-        "Modern day": "Specialty blends and caf\u00e9 culture"
-      }
+      "items": [
+        {
+          "text": "17th century",
+          "options": [
+            "Coffeehouses became popular in England",
+            "Specialty blends and café culture"
+          ],
+          "answer": "Coffeehouses became popular in England"
+        },
+        {
+          "text": "Modern day",
+          "options": [
+            "Coffeehouses became popular in England",
+            "Specialty blends and café culture"
+          ],
+          "answer": "Specialty blends and café culture"
+        }
+      ]
     }
   ]
 }
