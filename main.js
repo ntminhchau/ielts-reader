@@ -23,52 +23,93 @@ function resetTimer() {
 
 async function startTest() {
   resetTimer();
+
   const selectedTest = document.getElementById("testSelect").value;
   const enableTimer = document.getElementById("enableTimer").checked;
+  const timerElem = document.getElementById("timer");
+
   await loadTest(selectedTest);
+
   if (enableTimer) {
-    timerElem.style.display = "block";
-    updateTimer();
+    if (timerElem) {
+      timerElem.style.display = "block";
+      updateTimer();
+    }
   }
 }
 
 async function loadTest(testPath) {
-  const res = await fetch(testPath);
-  const data = await res.json();
-
-  document.getElementById("passage").textContent = data.passage;
-  const form = document.getElementById("questionForm");
-  form.innerHTML = ""; // Clear previous form
-
-  data.questions.forEach((q, i) => {
-    const div = document.createElement("div");
-    div.className = "question";
-    div.dataset.index = i;
-    div.dataset.type = q.type;
-    div.dataset.answer = JSON.stringify(q.answer);
-    div.innerHTML = `<p>${q.question}</p>`;
-
-    if (q.type === "multiple_choice") {
-      q.options.forEach(opt => {
-        div.innerHTML += `<label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label><br>`;
-      });
-    } else if (q.type === "true_false_not_given") {
-      ["True", "False", "Not Given"].forEach(opt => {
-        div.innerHTML += `<label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label><br>`;
-      });
-    } else if (q.type === "fill_in_blank") {
-      div.innerHTML += `<input name="q${i}" />`;
-    } else if (q.type === "matching") {
-      for (const key in q.pairs) {
-        div.innerHTML += `<label>${key}: <input name="q${i}_${key}" /></label><br>`;
-      }
+  try {
+    const res = await fetch(testPath);
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
     }
 
-    form.appendChild(div);
-  });
+    const data = await res.json();
 
-  document.getElementById("review").innerHTML = ""; // Clear previous review
+    document.getElementById("passage").textContent = data.passage || "";
+    const form = document.getElementById("questionForm");
+    form.innerHTML = ""; // Clear previous form
+
+    data.questions.forEach((q, i) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      div.dataset.index = i;
+      div.dataset.type = q.type;
+      div.dataset.answer = JSON.stringify(q.answer);
+      div.innerHTML = `<p>${q.question}</p>`;
+
+      // Normalize type naming if needed
+      const type = q.type.toLowerCase();
+
+      if (type === "multiple" || type === "multiple_choice") {
+        q.options.forEach(opt => {
+          div.innerHTML += `
+            <label>
+              <input type="radio" name="q${i}" value="${opt}"> ${opt}
+            </label><br>`;
+        });
+      } else if (type === "truefalse" || type === "true_false_not_given") {
+        ["True", "False", "Not Given"].forEach(opt => {
+          div.innerHTML += `
+            <label>
+              <input type="radio" name="q${i}" value="${opt}"> ${opt}
+            </label><br>`;
+        });
+      } else if (type === "fill" || type === "fill_in_blank") {
+        div.innerHTML += `<input name="q${i}" type="text" />`;
+      } else if (type === "matching") {
+        if (q.items) {
+          q.items.forEach(pair => {
+            div.innerHTML += `
+              <label>${pair.text}:
+                <select name="q${i}_${pair.text}">
+                  ${pair.options.map(opt => `<option value="${opt}">${opt}</option>`).join("")}
+                </select>
+              </label><br>`;
+          });
+        } else if (q.pairs) {
+          // Alternate "pairs" format
+          for (const key in q.pairs) {
+            div.innerHTML += `
+              <label>${key}: 
+                <input name="q${i}_${key}" type="text" />
+              </label><br>`;
+          }
+        }
+      }
+
+      form.appendChild(div);
+    });
+
+    document.getElementById("review").innerHTML = ""; // Clear previous review
+
+  } catch (error) {
+    console.error("Failed to load test:", error);
+    alert("Could not load the test file. Please check the filename and that the file is valid JSON.");
+  }
 }
+
 
 function submitAnswers() {
   clearTimeout(timerId); // Stop the timer
