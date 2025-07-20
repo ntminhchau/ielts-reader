@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>IELTS Reading Test</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Reader</title>
+  <style>
+    body { display: flex; font-family: sans-serif; height: 100vh; margin: 0; }
+    .column { flex: 1; padding: 1rem; overflow-y: auto; border-right: 1px solid #ccc; }
+    .column:last-child { border-right: none; }
+    #timer { font-weight: bold; margin-bottom: 1rem; }
+    .question { margin-bottom: 1rem; }
+    .correct { color: green; }
+    .incorrect { color: red; }
+  </style>
 </head>
 <body>
-  <h1>IELTS General Reading Test</h1>
-  <label><input type="checkbox" id="enableTimer"> Enable Timer (30 minutes)</label><br><br>
-  <select id="testSelector">
-    <option value="tests/test1.json">Test 1</option>
-  </select>
-  <button onclick="loadTest()">Load Test</button>
-
-  <div id="timerBox"></div>
-  <div id="testContainer"></div>
-  <button id="submitBtn" onclick="checkAnswers()" style="display:none;">Submit Answers</button>
-  <div id="scoreBox"></div>
-  <div id="reviewContainer"></div>
-
-  <script src="script.js"></script>
+  <div class="column" id="passage"></div>
+  <div class="column">
+    <div id="timer">Time left: 60:00</div>
+    <form id="questionForm"></form>
+    <button onclick="submitAnswers()">Submit</button>
+  </div>
+  <div class="column" id="review"></div>
+  <script src="main.js"></script>
 </body>
 </html>
