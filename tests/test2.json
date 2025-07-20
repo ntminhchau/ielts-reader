@@ -4,15 +4,27 @@
   "sections": [
     {
       "title": "Section 1: Matching Headings",
-      "passage": "Paragraph A: Local governments play a vital role in community services. \n\nParagraph B: Budget cuts have reduced their effectiveness.\n\nParagraph C: Volunteers have stepped in to provide essential programs.",
+      "passage": "Paragraph A: Local governments play a vital role in community services.\n\nParagraph B: Budget cuts have reduced their effectiveness.\n\nParagraph C: Volunteers have stepped in to provide essential programs.",
       "questions": [
         {
           "type": "matching",
           "question": "Match each paragraph with the correct heading.",
           "items": [
-            { "text": "Paragraph A", "options": ["Financial Troubles", "Community Leadership", "Volunteer Actions"], "answer": "Community Leadership" },
-            { "text": "Paragraph B", "options": ["Budget Cuts", "Education Reform", "Social Media"], "answer": "Budget Cuts" },
-            { "text": "Paragraph C", "options": ["Volunteer Actions", "Healthcare", "Waste Management"], "answer": "Volunteer Actions" }
+            {
+              "text": "Paragraph A",
+              "options": ["Financial Troubles", "Community Leadership", "Volunteer Actions"],
+              "answer": "Community Leadership"
+            },
+            {
+              "text": "Paragraph B",
+              "options": ["Budget Cuts", "Education Reform", "Social Media"],
+              "answer": "Budget Cuts"
+            },
+            {
+              "text": "Paragraph C",
+              "options": ["Volunteer Actions", "Healthcare", "Waste Management"],
+              "answer": "Volunteer Actions"
+            }
           ]
         }
       ]
@@ -22,10 +34,10 @@
       "passage": "Cats are often kept as pets. Some breeds require more grooming than others. Unlike dogs, most cats are independent and can be left alone longer.",
       "questions": [
         {
-           "type": "truefalse",
-  "question": "Cats need constant attention.",
-  "options": ["True", "False", "Not Given"],
-  "answer": "False"
+          "type": "truefalse",
+          "question": "Cats need constant attention.",
+          "options": ["True", "False", "Not Given"],
+          "answer": "False"
         },
         {
           "type": "truefalse",
