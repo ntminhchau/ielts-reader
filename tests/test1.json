@@ -1,23 +1,35 @@
 {
-  "title": "IELTS General Reading Test 1",
-  "sections": [
+  "title": "Sample IELTS Reading Test 1",
+  "passage": "The history of coffee is as rich as its flavor. Originating in Ethiopia, coffee spread to the Arabian Peninsula and then to Europe. By the 17th century, coffeehouses had become cultural hubs in England. Over time, coffee production shifted to colonies with suitable climates, such as those in South America and Southeast Asia.\n\nThe coffee trade has influenced global economics, fueled revolutions, and even shaped modern work culture. Its popularity is rivaled only by tea and water. As coffee continues to evolve, from traditional brews to specialty blends, it remains central to millions of lives daily.",
+  "questions": [
     {
-      "title": "Section 1",
-      "text": "UK Car Insurance for the over 50s. If you're looking for insurance that gives you...",
-      "questions": [
-        {
-          "number": 1,
-          "type": "completion",
-          "question": "Quotes are given with (1) _______ to buy.",
-          "answer": ["no obligation"]
-        },
-        {
-          "number": 2,
-          "type": "completion",
-          "question": "There is a tendency to (2) _______ drivers over a certain age.",
-          "answer": ["penalise", "penalize"]
-        }
-      ]
+      "type": "true_false_not_given",
+      "question": "Coffee was first discovered in South America.",
+      "answer": "False"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which region was the first to cultivate coffee?",
+      "options": [
+        "Europe",
+        "Ethiopia",
+        "South America",
+        "Southeast Asia"
+      ],
+      "answer": "Ethiopia"
+    },
+    {
+      "type": "fill_in_blank",
+      "question": "Coffee spread to the Arabian Peninsula and then to ____.",
+      "answer": "Europe"
+    },
+    {
+      "type": "matching",
+      "question": "Match each century with a development in coffee history.",
+      "pairs": {
+        "17th century": "Coffeehouses became popular in England",
+        "Modern day": "Specialty blends and caf\u00e9 culture"
+      }
     }
   ]
 }
