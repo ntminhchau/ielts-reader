@@ -1,1 +1,23 @@
-
+{
+  "title": "IELTS General Reading Test 1",
+  "sections": [
+    {
+      "title": "Section 1",
+      "text": "UK Car Insurance for the over 50s. If you're looking for insurance that gives you...",
+      "questions": [
+        {
+          "number": 1,
+          "type": "completion",
+          "question": "Quotes are given with (1) _______ to buy.",
+          "answer": ["no obligation"]
+        },
+        {
+          "number": 2,
+          "type": "completion",
+          "question": "There is a tendency to (2) _______ drivers over a certain age.",
+          "answer": ["penalise", "penalize"]
+        }
+      ]
+    }
+  ]
+}
