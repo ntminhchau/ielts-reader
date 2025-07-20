@@ -1,6 +1,6 @@
-let timeLeft = 3600;  // 60 minutes
+let timerId = null;
+let timeLeft = 3600; // 60 minutes
 const timerElem = document.getElementById("timer");
-const testPath = "tests/test1.json";
 
 function updateTimer() {
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
@@ -8,17 +8,37 @@ function updateTimer() {
   timerElem.textContent = `Time left: ${minutes}:${seconds}`;
   if (timeLeft > 0) {
     timeLeft--;
-    setTimeout(updateTimer, 1000);
+    timerId = setTimeout(updateTimer, 1000);
   } else {
     submitAnswers();
   }
 }
 
-async function loadTest() {
+function resetTimer() {
+  clearTimeout(timerId);
+  timeLeft = 3600;
+  timerElem.textContent = "Time left: 60:00";
+  timerElem.style.display = "none";
+}
+
+async function startTest() {
+  resetTimer();
+  const selectedTest = document.getElementById("testSelect").value;
+  const enableTimer = document.getElementById("enableTimer").checked;
+  await loadTest(`tests/${selectedTest}`);
+  if (enableTimer) {
+    timerElem.style.display = "block";
+    updateTimer();
+  }
+}
+
+async function loadTest(testPath) {
   const res = await fetch(testPath);
   const data = await res.json();
+
   document.getElementById("passage").textContent = data.passage;
   const form = document.getElementById("questionForm");
+  form.innerHTML = ""; // Clear previous form
 
   data.questions.forEach((q, i) => {
     const div = document.createElement("div");
@@ -46,9 +66,12 @@ async function loadTest() {
 
     form.appendChild(div);
   });
+
+  document.getElementById("review").innerHTML = ""; // Clear previous review
 }
 
 function submitAnswers() {
+  clearTimeout(timerId); // Stop the timer
   const review = document.getElementById("review");
   review.innerHTML = "<h3>Review</h3>";
   const questions = document.querySelectorAll(".question");
@@ -104,6 +127,3 @@ function convertScoreToBand(score, total) {
   if (percentage >= 0.5) return 5;
   return 4;
 }
-
-updateTimer();
-loadTest();
