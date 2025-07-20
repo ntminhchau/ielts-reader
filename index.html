@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IELTS Reading Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>IELTS General Reading Test</h1>
+  <label><input type="checkbox" id="enableTimer"> Enable Timer (30 minutes)</label><br><br>
+  <select id="testSelector">
+    <option value="tests/test1.json">Test 1</option>
+  </select>
+  <button onclick="loadTest()">Load Test</button>
 
+  <div id="timerBox"></div>
+  <div id="testContainer"></div>
+  <button id="submitBtn" onclick="checkAnswers()" style="display:none;">Submit Answers</button>
+  <div id="scoreBox"></div>
+  <div id="reviewContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
