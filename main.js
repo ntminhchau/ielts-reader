@@ -25,7 +25,7 @@ async function startTest() {
   resetTimer();
   const selectedTest = document.getElementById("testSelect").value;
   const enableTimer = document.getElementById("enableTimer").checked;
-  await loadTest(`tests/${selectedTest}`);
+  await loadTest(selectedTest);
   if (enableTimer) {
     timerElem.style.display = "block";
     updateTimer();
