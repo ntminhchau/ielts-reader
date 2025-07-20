@@ -1,0 +1,76 @@
+{
+  "title": "Sample Test 2",
+  "duration": 60,
+  "sections": [
+    {
+      "title": "Section 1: Matching Headings",
+      "passage": "Paragraph A: Local governments play a vital role in community services. \n\nParagraph B: Budget cuts have reduced their effectiveness.\n\nParagraph C: Volunteers have stepped in to provide essential programs.",
+      "questions": [
+        {
+          "type": "matching",
+          "question": "Match each paragraph with the correct heading.",
+          "items": [
+            { "text": "Paragraph A", "options": ["Financial Troubles", "Community Leadership", "Volunteer Actions"], "answer": "Community Leadership" },
+            { "text": "Paragraph B", "options": ["Budget Cuts", "Education Reform", "Social Media"], "answer": "Budget Cuts" },
+            { "text": "Paragraph C", "options": ["Volunteer Actions", "Healthcare", "Waste Management"], "answer": "Volunteer Actions" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section 2: True / False / Not Given",
+      "passage": "Cats are often kept as pets. Some breeds require more grooming than others. Unlike dogs, most cats are independent and can be left alone longer.",
+      "questions": [
+        {
+          "type": "truefalse",
+          "question": "Cats need constant attention.",
+          "answer": "False"
+        },
+        {
+          "type": "truefalse",
+          "question": "Cats are often more independent than dogs.",
+          "answer": "True"
+        },
+        {
+          "type": "truefalse",
+          "question": "All cats require the same grooming.",
+          "answer": "Not Given"
+        }
+      ]
+    },
+    {
+      "title": "Section 3: Multiple Choice",
+      "passage": "Renewable energy sources like wind and solar are becoming more important. Fossil fuels still dominate in many countries but may decline soon.",
+      "questions": [
+        {
+          "type": "multiple",
+          "question": "Which source is mentioned as renewable?",
+          "options": ["Coal", "Nuclear", "Wind", "Gas"],
+          "answer": "Wind"
+        },
+        {
+          "type": "multiple",
+          "question": "Which source is said to dominate currently?",
+          "options": ["Solar", "Wind", "Fossil Fuels", "Hydro"],
+          "answer": "Fossil Fuels"
+        }
+      ]
+    },
+    {
+      "title": "Section 4: Fill in the Blanks",
+      "passage": "A ___ is a natural satellite that orbits the Earth. The moon affects ocean ___ due to gravitational pull.",
+      "questions": [
+        {
+          "type": "fill",
+          "question": "A ___ is a natural satellite...",
+          "answer": "moon"
+        },
+        {
+          "type": "fill",
+          "question": "The moon affects ocean ___...",
+          "answer": "tides"
+        }
+      ]
+    }
+  ]
+}
