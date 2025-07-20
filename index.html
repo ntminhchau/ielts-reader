@@ -18,19 +18,14 @@
   <div style="position: fixed; top: 1rem; left: 1rem; z-index: 10; background: white; padding: 0.5rem; border: 1px solid #ccc;">
     <label for="testSelect">Select Test:</label>
     <select id="testSelect">
-      <option value="test1.json">Sample Test 1</option>
-      <option value="test2.json">Sample Test 2</option>
+      <option value="tests/test1.json">Sample Test 1</option>
+      <option value="tests/test2.json">Sample Test 2</option>
     </select>
-<select id="testSelector">
-  <option value="tests/test1.json">Sample Test 1</option>
-  <option value="tests/test2.json">Sample Test 2</option>
-</select>
-<button onclick="startTest()">Start Test</button>
+    <button onclick="startTest()">Start Test</button>
     <label>
       <input type="checkbox" id="enableTimer" checked />
       Timer
     </label>
-
   </div>
 
   <div class="column" id="passage"></div>
