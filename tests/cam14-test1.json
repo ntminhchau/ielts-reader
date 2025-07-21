@@ -1,58 +1,207 @@
 {
   "id": "cam14-test1",
-  "title": "Cambridge IELTS 14 - Test 1",
-  "description": "Reading test with passages on elderly care, travel bags, college parking, and maternity benefits.",
+  "title": "Cambridge IELTS 14 - Reading Test 1",
+  "description": "Passages on Transition Care, Cabin Bags, College Parking, and Maternity Benefits.",
   "sections": [
     {
-      "title": "Section 1: Transition Care for the Elderly",
-      "passage": "Transition care is for older people who have been receiving medical treatment, but need more help to recover, and time to make a decision about the best place for them to live in the longer term. You can only access transition care directly from the hospital.\n\nTransition care is focused on individual goals and therapies and is given for a limited time only. It offers access to a package of services that may include:\n\n• low-intensity therapy such as physiotherapy (exercise, mobility, strength and balance) and podiatry (foot care)\n• access to a social worker\n• nursing support for clinical care such as wound care\n• personal care\n\nTransition care is often provided by non-government organisations and is subsidised by the government. If your circumstances allow, it is expected you’ll contribute to the cost of your care.\n\nDaily care fees are set by the organisation that provides your transition care services (your service provider). They should explain these fees to you, and the amount charged should form part of the agreement between you and the service provider. The fee is calculated on a daily basis.\n\nTransition care is provided in your own home or in a ‘live-in’ setting. This setting can be part of an existing aged-care home or health facility such as a separate wing of a hospital.\n\nIf you’re already receiving subsidised residential care in an aged-care home, but you need to go somewhere else for transition care, your place in the aged-care home will be held until you return.",
+      "title": "Section 1 - Transition Care for the Elderly",
+      "passage": "Transition care is for older people who have been receiving medical treatment, but need more help to recover, and time to make a decision about the best place for them to live in the longer term. You can only access transition care directly from the hospital.\n\nTransition care is focused on individual goals and therapies and is given for a limited time only. It offers access to a package of services that may include:\n• low-intensity therapy such as physiotherapy (exercise, mobility, strength and balance) and podiatry (foot care)\n• access to a social worker\n• nursing support for clinical care such as wound care\n• personal care\n\nTransition care is often provided by non-government organisations and is subsidised by the government. If your circumstances allow, it is expected you’ll contribute to the cost of your care.\n\nDaily care fees are set by the organisation that provides your transition care services (your service provider). They should explain these fees to you, and the amount charged should form part of the agreement between you and the service provider. The fee is calculated on a daily basis.\n\nTransition care is provided in your own home or in a ‘live-in’ setting. This setting can be part of an existing aged-care home or health facility such as a separate wing of a hospital.\n\nIf you’re already receiving subsidised residential care in an aged-care home, but you need to go somewhere else for transition care, your place in the aged-care home will be held until you return.",
       "questions": [
-        { "number": 1, "type": "true-false-not-given", "question": "Only hospital patients can go on to have transition care.", "answer": "TRUE" },
-        { "number": 2, "type": "true-false-not-given", "question": "Transition care may be long term or short term.", "answer": "FALSE" },
-        { "number": 3, "type": "true-false-not-given", "question": "Everyone receiving transition care must contribute to the cost.", "answer": "NOT GIVEN" },
-        { "number": 4, "type": "true-false-not-given", "question": "Transition care at home is only available for patients who live alone.", "answer": "FALSE" },
-        { "number": 5, "type": "true-false-not-given", "question": "Transition care may be given on a hospital site.", "answer": "TRUE" },
-        { "number": 6, "type": "true-false-not-given", "question": "You may lose your place in a care home if you have to leave it to receive transition care.", "answer": "FALSE" }
+        {
+          "number": 1,
+          "type": "true-false-not-given",
+          "question": "Only hospital patients can go on to have transition care.",
+          "answer": "TRUE"
+        },
+        {
+          "number": 2,
+          "type": "true-false-not-given",
+          "question": "Transition care may be long term or short term.",
+          "answer": "FALSE"
+        },
+        {
+          "number": 3,
+          "type": "true-false-not-given",
+          "question": "Everyone receiving transition care must contribute to the cost.",
+          "answer": "FALSE"
+        },
+        {
+          "number": 4,
+          "type": "true-false-not-given",
+          "question": "Transition care at home is only available for patients who live alone.",
+          "answer": "NOT GIVEN"
+        },
+        {
+          "number": 5,
+          "type": "true-false-not-given",
+          "question": "Transition care may be given on a hospital site.",
+          "answer": "TRUE"
+        },
+        {
+          "number": 6,
+          "type": "true-false-not-given",
+          "question": "You may lose your place in a care home if you have to leave it to receive transition care.",
+          "answer": "FALSE"
+        }
       ]
     },
     {
-      "title": "Section 2: Cabin Bags for Air Travel",
-      "passage": "If you want a small bag with wheels that you can take onto the plane with you, there’s a wide choice. Here are some of the best.\n\nA  The Flyer B3 is an ultra-lightweight cabin bag which can withstand some pretty harsh treatment... (truncated for brevity)\n\nB  The Lightglide has two external pockets... (continues)\n\nC  The Foxton is easy to control... (continues)\n\nD  The Skybag has a single external zipped pocket...\n\nE  The Travelsure 35 is available in a huge range of fabric designs...",
+      "title": "Section 2 - Cabin Bags for Air Travel",
+      "passage": "If you want a small bag with wheels that you can take onto the plane with you, there’s a wide choice. Here are some of the best.\n\nA  The Flyer B3 is an ultra-lightweight cabin bag which can withstand some pretty harsh treatment, its nylon and polyester sides won’t rip or burst open if it’s dropped or thrown whilst in transit. However, the trolley handle feels quite thin and flimsy. The top carrying handle is hard and flat, and the side handle isn’t easy to grip.\n\nB  The Lightglide has two external pockets, both of which are zipped and lockable, but the inside pocket does not zip. In tests, we found the contents remain dry when given a good soaking, even around the zips. The trolley handle has a choice of two heights and the plastic hand grip doesn’t have any sharp ridges that’ll make your hands sore. For carrying there are fabric handles at the top and side.\n\nC  The Foxton is easy to control across most surfaces. However, the zips don’t always run smoothly especially around the corners, so you may have to give them a good tug, especially if the case is very full. This is definitely one to avoid if you’re going somewhere rainy as it lets loads of water in, and documents in the pockets will also get pretty wet unless they’re in plastic folders.\n\nD  The Skybag has a single external zipped pocket and another located inside the lid. Your clothes are kept in place by two adjustable straps. The zips are easy to grip and they run smoothly around the case. However, this cabin bag felt a little heavy to pull on all but smooth floors, and it was hard to steer compared with some of the other suitcases.\n\nE  The Travelsure 35 is available in a huge range of fabric designs including leopard print or lipstick kisses. The retractable trolley handle is comfortable but can’t be adjusted to suit users of different heights. There’s no internal divider, but there are two handy zipped pockets in the lid. We test each bag by letting it fall onto a hard floor – and our results show that you’ll have to treat this bag with great care if you want it to last. The fabric tore so badly at one of the corners that it was unusable.",
       "questions": [
-        { "number": 7, "type": "matching", "question": "The zips on this cabin bag may be difficult to use.", "answer": "C" },
-        { "number": 8, "type": "matching", "question": "This cabin bag may be badly damaged if it is dropped.", "answer": "E" },
-        { "number": 9, "type": "matching", "question": "The handles of this cabin bag have a number of different problems.", "answer": "A" },
-        { "number": 10, "type": "matching", "question": "This cabin bag is very resistant to water.", "answer": "B" },
-        { "number": 11, "type": "matching", "question": "There’s a good choice of patterns for the fabric of this cabin bag.", "answer": "E" },
-        { "number": 12, "type": "matching", "question": "This cabin bag isn’t very easy to move around.", "answer": "D" },
-        { "number": 13, "type": "matching", "question": "This cabin bag has just one internal zipped pocket.", "answer": "D" },
-        { "number": 14, "type": "matching", "question": "The trolley handle of this cabin bag is adjustable.", "answer": "B" }
+        {
+          "number": 7,
+          "type": "matching-paragraph",
+          "question": "The zips on this cabin bag may be difficult to use.",
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "type": "matching-paragraph",
+          "question": "This cabin bag may be badly damaged if it is dropped.",
+          "answer": "E"
+        },
+        {
+          "number": 9,
+          "type": "matching-paragraph",
+          "question": "The handles of this cabin bag have a number of different problems.",
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "type": "matching-paragraph",
+          "question": "This cabin bag is very resistant to water.",
+          "answer": "B"
+        },
+        {
+          "number": 11,
+          "type": "matching-paragraph",
+          "question": "There’s a good choice of patterns for the fabric of this cabin bag.",
+          "answer": "E"
+        },
+        {
+          "number": 12,
+          "type": "matching-paragraph",
+          "question": "This cabin bag isn’t very easy to move around.",
+          "answer": "D"
+        },
+        {
+          "number": 13,
+          "type": "matching-paragraph",
+          "question": "This cabin bag has just one internal zipped pocket.",
+          "answer": "D"
+        },
+        {
+          "number": 14,
+          "type": "matching-paragraph",
+          "question": "The trolley handle of this cabin bag is adjustable.",
+          "answer": "B"
+        }
       ]
     },
     {
-      "title": "Section 3: College Car Parking Policy – Staff",
-      "passage": "Parking permits and tickets: Staff permits are required to park a motor vehicle... (truncated for brevity)\n\nEnforcement: The nominated contractor will issue fixed Penalty Charge Notices...\n\nPenalty Charge Notice (PCN): The PCN is £30, increasing to £60...\n\nDisabled parking: The college has designated car parking spaces...\n\nVisitors: The College welcomes visitors and provides parking arrangements...\n\nShort-term drop-off/pick-up provision: There will be two short-term drop-off spaces...",
+  "title": "Cambridge IELTS 14 - Test 1",
+  "description": "Section 2 - Car Parking and Maternity Benefits",
+  "sections": [
+    {
+      "title": "College Car Parking Policy – Staff",
+      "passage": "Staff permits are required to park a motor vehicle (other than a motorcycle parked in the cycle bays) on campus between 8.30 am and 4.30 pm, Monday to Friday, during term time.\n\nAnnual permits can be purchased from the Hospitality Department. Application forms can be downloaded from the College website. All permits/tickets must be clearly displayed in the windscreen of vehicles during the dates of term time, as published in the academic calendar. \n\nAnnual car parking permits can be purchased from 20th September and are valid for one academic year from 1st October to 30th June.\n\nThe nominated contractor will issue fixed Penalty Charge Notices (PCNs) on vehicles that fail to display a valid permit and/or parking ticket or are parked improperly. PCNs cost £30, increasing to £60 after seven days. Visitors can get pre-arranged permits from the Hospitality Department. Two short-term drop-off spaces (10 minutes max) are located outside Concorde Building.",
       "questions": [
-        { "number": 15, "type": "short-answer", "question": "Where can you buy parking permits at the college?", "answer": "Hospitality Department" },
-        { "number": 16, "type": "short-answer", "question": "Which document shows the dates of term time?", "answer": "academic calendar" },
-        { "number": 17, "type": "short-answer", "question": "What is the start date of annual parking permits?", "answer": "1st October" },
-        { "number": 18, "type": "short-answer", "question": "Who is responsible for giving out parking fines if you park in the wrong place?", "answer": "nominated contractor" },
-        { "number": 19, "type": "short-answer", "question": "What do visitors need to show when parking?", "answer": "pre-arranged permits" },
-        { "number": 20, "type": "short-answer", "question": "Where can the nursery pick-up point be found?", "answer": "outside Concorde Building" }
+        {
+          "number": 15,
+          "type": "short-answer",
+          "question": "Where can you buy parking permits at the college?",
+          "answer": "Hospitality Department"
+        },
+        {
+          "number": 16,
+          "type": "short-answer",
+          "question": "Which document shows the dates of term time?",
+          "answer": "academic calendar"
+        },
+        {
+          "number": 17,
+          "type": "short-answer",
+          "question": "What is the start date of annual parking permits?",
+          "answer": [
+            "1st October",
+            "1 October",
+            "October 1",
+            "01 October",
+            "01/10",
+            "1/10",
+            "Oct 1"
+          ]
+        },
+        {
+          "number": 18,
+          "type": "short-answer",
+          "question": "Who is responsible for giving out parking fines?",
+          "answer": "nominated contractor"
+        },
+        {
+          "number": 19,
+          "type": "short-answer",
+          "question": "What do visitors need to show when parking?",
+          "answer": "permits"
+        },
+        {
+          "number": 20,
+          "type": "short-answer",
+          "question": "Where is the nursery pick-up point located?",
+          "answer": "Concorde Building"
+        }
       ]
     },
     {
-      "title": "Section 4: Maternity Benefits",
-      "passage": "If you are expecting a baby, there are a number of benefit schemes that could help you financially. However, eligibility differs for each individual scheme...\n\nStatutory Maternity Pay (SMP): You may be entitled to SMP...\n\nMaternity Allowance (MA): MA is available to those who are employed or self-employed...\n\nChild Tax Credit: If you’re on a low income...\n\nSure Start Maternity Payments: If you get benefits or Child Tax Credit...",
+      "title": "Maternity Benefits",
+      "passage": "You may be entitled to Statutory Maternity Pay (SMP) from your employer. This is a weekly payment to support time off before and after the birth.\n\nSMP is available if you've worked at least 26 weeks for the same company by the 15th week before your due date. For 6 weeks, you get 90% of your average earnings. Then, £112.75 per week for the remaining 33 weeks.\n\nIf you're not eligible for SMP, you may get Maternity Allowance (MA) if you've worked (employed or self-employed) for 26 out of the last 66 weeks. Forms are available at antenatal clinics.\n\nChild Tax Credit is also available for low-income families with children. Sure Start Maternity Payments are one-time grants for those receiving benefits.",
       "questions": [
-        { "number": 21, "type": "short-answer", "question": "What is the minimum period you must have worked for an employer in order to be eligible for SMP?", "answer": "26 weeks" },
-        { "number": 22, "type": "short-answer", "question": "For how long is SMP payable every week as a percentage of your average weekly earnings?", "answer": "6 weeks" },
-        { "number": 23, "type": "short-answer", "question": "What sum is payable every week as the second part of SMP entitlement?", "answer": "£112.75" },
-        { "number": 24, "type": "short-answer", "question": "What is the maximum length of time MA is payable?", "answer": "39 weeks" },
-        { "number": 25, "type": "short-answer", "question": "Where can MA forms be obtained?", "answer": "antenatal clinics" },
-        { "number": 26, "type": "short-answer", "question": "Apart from income, what else is considered when assessing how much Child Tax Credit is paid?", "answer": "personal circumstances" },
-        { "number": 27, "type": "short-answer", "question": "What are Sure Start Maternity Payments?", "answer": "individual grants" }
+        {
+          "number": 21,
+          "type": "short-answer",
+          "question": "What is the minimum period you must have worked to be eligible for SMP?",
+          "answer": "26 weeks"
+        },
+        {
+          "number": 22,
+          "type": "short-answer",
+          "question": "For how long is SMP paid at 90% of your average earnings?",
+          "answer": "six weeks"
+        },
+        {
+          "number": 23,
+          "type": "short-answer",
+          "question": "What is the weekly amount after the first 6 weeks of SMP?",
+          "answer": "£112.75"
+        },
+        {
+          "number": 24,
+          "type": "short-answer",
+          "question": "What is the maximum length of time MA is payable?",
+          "answer": "39 weeks"
+        },
+        {
+          "number": 25,
+          "type": "short-answer",
+          "question": "Where can MA forms be obtained?",
+          "answer": "antenatal clinics"
+        },
+        {
+          "number": 26,
+          "type": "short-answer",
+          "question": "Apart from income, what else affects Child Tax Credit eligibility?",
+          "answer": "personal circumstances"
+        },
+        {
+          "number": 27,
+          "type": "short-answer",
+          "question": "What are Sure Start Maternity Payments?",
+          "answer": "grants"
+        }
       ]
     }
   ]
 }
+
+      
