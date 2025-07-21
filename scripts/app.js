@@ -1,4 +1,5 @@
 // app.js: Handles test loading, timing, navigation, result generation
+
 const testFolder = 'tests/';
 const bandMapUrl = 'data/band_conversion.json';
 
@@ -7,6 +8,7 @@ let userAnswers = {};
 let mode = 'practice'; // 'test' or 'practice'
 let timer = null;
 
+// ----------------- ON LOAD -----------------
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname.toLowerCase();
 
@@ -18,54 +20,67 @@ document.addEventListener('DOMContentLoaded', () => {
     showReview();
   }
 });
+
 // ----------------- HOMEPAGE -----------------
 async function loadTestList() {
   const container = document.getElementById('test-list-container');
-  const manifest = await fetch('./tests/test_manifest.json').then(res => res.json());
-  console.log("Manifest data:",manifest);
-  console.log("▶️ Enter loadTestList()");
-  timedButton.addEventListener('click', () => startTest(test.file, 'timed'));
-try {
-  const res = await fetch('./tests/test_manifest.json');
-  console.log("Fetch status:", res.status);
-  const manifest = await res.json();
-  console.log("Manifest data:", manifest);
-  // ... render logic ...
-} catch (err) {
-  console.error("Error loading tests:", err);
-}
-  container.innerHTML = '<p>No tests found in manifest.</p>';
-  for (const test of manifest) {
-    const card = document.createElement('div');
-    card.className = 'question-card';
-    card.innerHTML = `
-      <h2>${test.title}</h2>
-      <p>${test.description}</p>
-      <button onclick="startTest('${test.file}', 'test')">Start Timed</button>
-      <button onclick="startTest('${test.file}', 'practice')">Start Practice</button>
-    `;
-    container.appendChild(card);
+
+  try {
+    const res = await fetch('./tests/test_manifest.json');
+    const manifest = await res.json();
+    console.log("✅ Manifest loaded:", manifest);
+
+    if (!manifest.length) {
+      container.innerHTML = '<p>No tests found in manifest.</p>';
+      return;
+    }
+
+    container.innerHTML = '';
+    manifest.forEach(test => {
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      card.innerHTML = `
+        <h2>${test.title}</h2>
+        <p>${test.description}</p>
+        <button onclick="startTest('${test.file}', 'test')">Start Timed</button>
+        <button onclick="startTest('${test.file}', 'practice')">Start Practice</button>
+      `;
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error("❌ Error loading tests:", err);
+    container.innerHTML = '<p>Error loading tests. Please try again later.</p>';
   }
 }
 
-function startTest(filename, selectedMode) {
+// Expose startTest globally so it works with onclick in HTML
+window.startTest = function (filename, selectedMode) {
   localStorage.setItem('currentTestFile', filename);
   localStorage.setItem('mode', selectedMode);
   window.location.href = 'test.html';
-}
+};
 
 // ----------------- TEST PAGE -----------------
 async function initTestPage() {
   const file = localStorage.getItem('currentTestFile');
   mode = localStorage.getItem('mode');
-  currentTest = await fetch(testFolder + file).then(res => res.json());
+
+  try {
+    const res = await fetch(testFolder + file);
+    currentTest = await res.json();
+  } catch (err) {
+    console.error("❌ Failed to load test file:", err);
+    return;
+  }
 
   document.getElementById('test-title').textContent = currentTest.title;
 
   renderPassageAndQuestions(currentTest);
 
   if (mode === 'test') startTimer(60 * 60);
-document.getElementById('submit-btn').onclick = () => {
+
+  document.getElementById('submit-btn').onclick = () => {
     localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
     window.location.href = 'review.html';
   };
@@ -74,22 +89,31 @@ document.getElementById('submit-btn').onclick = () => {
 function renderPassageAndQuestions(test) {
   const passagePane = document.getElementById('passage-pane');
   const questionsPane = document.getElementById('questions-pane');
-  const nav = document.getElementById('navigation-controls');
 
-  test.sections.forEach((section, i) => {
+  test.sections.forEach(section => {
     passagePane.innerHTML += `<h2>${section.title}</h2><p>${section.passage}</p>`;
 
     section.questions.forEach(q => {
-      const qDiv = document.createElement('div');
+const qDiv = document.createElement('div');
       qDiv.className = 'question-card';
-      qDiv.innerHTML = `
-        <p><strong>Q${q.number}</strong>: ${q.question}</p>
-        ${q.options.map(opt => `
-          <label><input type="radio" name="q${q.number}" value="${opt}" 
-            onchange="userAnswers[${q.number}] = '${opt}'" /> ${opt}</label><br/>`
-        ).join('')}
-      `;
+
+      const optionsHtml = q.options.map(opt => `
+        <label>
+          <input type="radio" name="q${q.number}" value="${opt}" />
+          ${opt}
+        </label><br/>
+      `).join('');
+
+      qDiv.innerHTML = `<p><strong>Q${q.number}</strong>: ${q.question}</p>${optionsHtml}`;
       questionsPane.appendChild(qDiv);
+
+      // Set up listeners
+      const inputs = qDiv.querySelectorAll(`input[name="q${q.number}"]`);
+      inputs.forEach(input => {
+        input.addEventListener('change', () => {
+          userAnswers[q.number] = input.value;
+        });
+      });
     });
   });
 }
@@ -99,10 +123,12 @@ function startTimer(seconds) {
   timer = setInterval(() => {
     if (seconds <= 0) {
       clearInterval(timer);
-      alert("Time's up!");
+      alert("⏰ Time's up!");
       document.getElementById('submit-btn').click();
     } else {
-      container.textContent = `Time Left: ${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, '0')}`;
+      const mins = Math.floor(seconds / 60);
+      const secs = (seconds % 60).toString().padStart(2, '0');
+      container.textContent = `Time Left: ${mins}:${secs}`;
       seconds--;
     }
   }, 1000);
@@ -111,10 +137,18 @@ function startTimer(seconds) {
 // ----------------- REVIEW PAGE -----------------
 async function showReview() {
   const file = localStorage.getItem('currentTestFile');
-  const test = await fetch(testFolder + file).then(res => res.json());
   const answers = JSON.parse(localStorage.getItem('userAnswers'));
-  const bandMap = await fetch(bandMapUrl).then(res => res.json());
   const reviewDiv = document.getElementById('review-container');
+
+  let test = null, bandMap = null;
+  try {
+    test = await fetch(testFolder + file).then(res => res.json());
+    bandMap = await fetch(bandMapUrl).then(res => res.json());
+  } catch (err) {
+    console.error("❌ Failed to load review data:", err);
+    reviewDiv.innerHTML = '<p>Error loading review. Please try again.</p>';
+    return;
+  }
 
   let totalCorrect = 0;
   reviewDiv.innerHTML = '';
@@ -124,6 +158,7 @@ async function showReview() {
       const userAnswer = answers[q.number];
       const isCorrect = userAnswer === q.answer;
       if (isCorrect) totalCorrect++;
+
       const div = document.createElement('div');
       div.className = `question-card ${isCorrect ? 'correct-answer' : 'incorrect-answer'}`;
       div.innerHTML = `
