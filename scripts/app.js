@@ -23,6 +23,16 @@ async function loadTestList() {
   const container = document.getElementById('test-list-container');
   const manifest = await fetch('./tests/test_manifest.json').then(res => res.json());
   console.log("Manifest data:",manifest);
+  console.log("▶️ Enter loadTestList()");
+try {
+  const res = await fetch('./tests/test_manifest.json');
+  console.log("Fetch status:", res.status);
+  const manifest = await res.json();
+  console.log("Manifest data:", manifest);
+  // ... render logic ...
+} catch (err) {
+  console.error("Error loading tests:", err);
+}
   container.innerHTML = '<p>No tests found in manifest.</p>';
   for (const test of manifest) {
     const card = document.createElement('div');
