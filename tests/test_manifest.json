@@ -8,6 +8,11 @@
     "file": "cam14-test1.json",
     "title": "Cambridge IELTS 14 - Test 1",
     "description": "Reading test from official Cambridge IELTS 14 book."
+  },
+  {
+    "file": "cam14-test2.json",
+    "title": "Cambridge IELTS 14 General Training Reading Test",
+    "description": "Five reviews of the Wellington Hotel"
   }
 ]
 
