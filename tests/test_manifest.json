@@ -3,5 +3,11 @@
     "file": "sample-test.json",
     "title": "IELTS Reading Practice Test 1",
     "description": "Passage about renewable energy."
+  },
+  {
+    "file": "cam14-test1.json",
+    "title": "Cambridge IELTS 14 - Test 1",
+    "description": "Reading test from official Cambridge IELTS 14 book."
   }
 ]
+
