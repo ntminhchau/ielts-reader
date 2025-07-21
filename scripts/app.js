@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadTestList() {
   const container = document.getElementById('test-list-container');
   const manifest = await fetch('./tests/test_manifest.json').then(res => res.json());
-
+  console.log("Manifest data:",manifest);
   container.innerHTML = '<p>No tests found in manifest.</p>';
   for (const test of manifest) {
     const card = document.createElement('div');
