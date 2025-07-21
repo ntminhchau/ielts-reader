@@ -197,31 +197,31 @@ async function showReview() {
   reviewDiv.innerHTML = '';
 
   test.sections.forEach(section => {
+    const sectionHeader = document.createElement('h2');
+    sectionHeader.textContent = section.title;
+    reviewDiv.appendChild(sectionHeader);
+
     section.questions.forEach(q => {
-      const userAnswer = answers[q.number];
-      const isCorrect = userAnswer === q.answer;
+      const userAnswer = (answers[q.number] || '').trim();
+      const correctAnswer = q.answer;
+      const isCorrect = userAnswer.toUpperCase() === correctAnswer.toUpperCase();
+
       if (isCorrect) totalCorrect++;
 
-      const div = document.createElement('div');
-      div.className = `question-card ${isCorrect ? 'correct-answer' : 'incorrect-answer'}`;
-      div.innerHTML = `
+      const card = document.createElement('div');
+      card.className = `question-card ${isCorrect ? 'correct-answer' : 'incorrect-answer'}`;
+
+      card.innerHTML = `
         <p><strong>Q${q.number}:</strong> ${q.question}</p>
-        <p>Your answer: <strong>${userAnswer || 'N/A'}</strong></p>
-        ${!isCorrect ? `<p>Correct answer: <strong>${q.answer}</strong></p>` : ''}
+        <p><strong>Your answer:</strong> ${userAnswer || '<em>No answer</em>'}</p>
+        ${!isCorrect ? `<p><strong>Correct answer:</strong> ${correctAnswer}</p>` : ''}
+        <p><strong>Type:</strong> ${formatQuestionType(q.type)}</p>
       `;
-      reviewDiv.appendChild(div);
+
+      reviewDiv.appendChild(card);
     });
   });
 
   const bandScore = bandMap[totalCorrect] || 'N/A';
-  const summary = document.createElement('div');
-  summary.innerHTML = `<h2>Score Summary</h2>
-    <p>Total Correct: ${totalCorrect}</p>
-    <p>Estimated IELTS Band: <strong>${bandScore}</strong></p>`;
-  reviewDiv.prepend(summary);
+  const summary = document.createElemen
 
-  document.getElementById('retake-btn').onclick = () => {
-    localStorage.removeItem('userAnswers');
-    window.location.href = 'test.html';
-  };
-}
