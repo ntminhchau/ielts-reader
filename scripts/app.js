@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ----------------- HOMEPAGE -----------------
 async function loadTestList() {
   const container = document.getElementById('test-list-container');
-  const manifest = await fetch('tests/test_manifest.json').then(res => res.json());
+  const manifest = await fetch('./tests/test_manifest.json').then(res => res.json());
 
   container.innerHTML = '';
   for (const test of manifest) {
