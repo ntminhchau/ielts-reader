@@ -8,9 +8,9 @@ let mode = 'practice'; // 'test' or 'practice'
 let timer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const path = window.location.pathname;
+  const path = window.location.pathname.toLowerCase();
 
-  if (path.includes('index.html') || path === '/' || path === '/IELTS-Reading/') {
+  if (path.endsWith('/') || path.endsWith('/index.html')) {
     loadTestList();
   } else if (path.includes('test.html')) {
     initTestPage();
