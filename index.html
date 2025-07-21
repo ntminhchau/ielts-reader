@@ -1,52 +1,19 @@
+<!-- index.html: Homepage listing all available tests with options for Timed or Practice mode -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IELTS Reader</title>
-  <style>
-    body { display: flex; font-family: sans-serif; height: 100vh; margin: 0; }
-    .column { flex: 1; padding: 1rem; overflow-y: auto; border-right: 1px solid #ccc; }
-    .column:last-child { border-right: none; }
-    #timer { font-weight: bold; margin-bottom: 1rem; }
-    .question { margin-bottom: 1rem; }
-    .correct { color: green; }
-    .incorrect { color: red; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IELTS Reading Practice</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <!-- Top Control Panel -->
-  <div style="position: fixed; top: 1rem; left: 1rem; z-index: 10; background: white; padding: 0.5rem; border: 1px solid #ccc;">
-    <label for="testSelect">Select Test:</label>
-    <select id="testSelect">
-      <option value="tests/test1.json">Sample Test 1</option>
-      <option value="tests/test2.json">Sample Test 2</option>
-    </select>
-    <button type="button" onclick="startTest()">Start Test</button>
-    <label style="margin-left: 1rem;">
-      <input type="checkbox" id="enableTimer" checked />
-      Timer
-    </label>
-  </div>
-
-  <!-- Main Content Columns -->
-  <div class="column" id="passage"></div>
-
-  <div class="column">
-    <div id="timer" style="display: none; font-weight: bold; margin-bottom: 1rem;">Time left: 60:00</div>
-    
-    <!-- Question Form -->
-    <form id="questionForm" onsubmit="event.preventDefault(); submitAnswers();"></form>
-
-    <!-- Submit Button -->
-    <button type="button" onclick="submitAnswers()">Submit</button>
-  </div>
-
-  <!-- Review Output -->
-  <div class="column" id="review"></div>
-
-  <!-- JavaScript -->
-  <script src="main.js"></script>
+  <header>
+    <h1>IELTS Reading Practice Tests</h1>
+  </header>
+  <main id="test-list-container">
+    <p>Loading available tests...</p>
+  </main>
+  <script src="scripts/app.js" type="module"></script>
 </body>
-
 </html>
