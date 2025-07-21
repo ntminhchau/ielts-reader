@@ -91,32 +91,75 @@ function renderPassageAndQuestions(test) {
   const questionsPane = document.getElementById('questions-pane');
 
   test.sections.forEach(section => {
-    passagePane.innerHTML += `<h2>${section.title}</h2><p>${section.passage}</p>`;
+    // Section title
+    const sectionHeader = document.createElement('h2');
+    sectionHeader.textContent = section.title;
+    passagePane.appendChild(sectionHeader);
 
+    // Paragraph formatting (from newlines)
+    section.passage.split('\n').forEach(para => {
+      const p = document.createElement('p');
+      p.textContent = para.trim();
+      passagePane.appendChild(p);
+    });
+
+    // Render questions
     section.questions.forEach(q => {
-const qDiv = document.createElement('div');
+      const qDiv = document.createElement('div');
       qDiv.className = 'question-card';
 
-      const optionsHtml = q.options.map(opt => `
-        <label>
-          <input type="radio" name="q${q.number}" value="${opt}" />
-          ${opt}
-        </label><br/>
-      `).join('');
+      const qLabel = document.createElement('p');
+      qLabel.innerHTML = `<strong>Q${q.number}:</strong> ${q.question}`;
+      qDiv.appendChild(qLabel);
 
-      qDiv.innerHTML = `<p><strong>Q${q.number}</strong>: ${q.question}</p>${optionsHtml}`;
-      questionsPane.appendChild(qDiv);
-
-      // Set up listeners
-      const inputs = qDiv.querySelectorAll(`input[name="q${q.number}"]`);
-      inputs.forEach(input => {
-        input.addEventListener('change', () => {
-          userAnswers[q.number] = input.value;
+      if (q.options && Array.isArray(q.options)) {
+        // Multiple choice / Matching
+        q.options.forEach(opt => {
+          const label = document.createElement('label');
+          label.innerHTML = `
+            <input type="radio" name="q${q.number}" value="${opt}" />
+            ${opt}
+          `;
+          label.querySelector('input').addEventListener('change', () => {
+            userAnswers[q.number] = opt;
+          });
+          qDiv.appendChild(label);
+          qDiv.appendChild(document.createElement('br'));
         });
-      });
+      } else if (q.type === 'true-false-not-given') {
+        // TFNG options hardcoded
+        ['TRUE', 'FALSE', 'NOT GIVEN'].forEach(opt => {
+          const label = document.createElement('label');
+          label.innerHTML = `
+            <input type="radio" name="q${q.number}" value="${opt}" />
+            ${opt}
+          `;
+          label.querySelector('input').addEventListener('change', () => {
+            userAnswers[q.number] = opt;
+          });
+          qDiv.appendChild(label);
+          qDiv.appendChild(document.createElement('br'));
+        });
+      } else {
+        // Short answer input
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `q${q.number}`;
+        input.placeholder =
+          q.type === 'short-answer'
+            ? 'Answer with up to 3 words and/or a number'
+            : 'Type your answer';
+        input.addEventListener('input', () => {
+          userAnswers[q.number] = input.value.trim();
+        });
+        qDiv.appendChild(input);
+      }
+
+      questionsPane.appendChild(qDiv);
     });
   });
 }
+
 
 function startTimer(seconds) {
   const container = document.getElementById('timer-container');
