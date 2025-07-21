@@ -21,23 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // ----------------- HOMEPAGE -----------------
 async function loadTestList() {
   const container = document.getElementById('test-list-container');
-  const response = await fetch(testFolder);
-  const text = await response.text();
-  const parser = new DOMParser();
-  const html = parser.parseFromString(text, 'text/html');
-  const links = [...html.querySelectorAll('a')].filter(a => a.href.endsWith('.json'));
+  const manifest = await fetch('tests/test_manifest.json').then(res => res.json());
 
   container.innerHTML = '';
-  for (const link of links) {
-    const file = link.href.split('/').pop();
-    const testData = await fetch(testFolder + file).then(res => res.json());
+  for (const test of manifest) {
     const card = document.createElement('div');
     card.className = 'question-card';
     card.innerHTML = `
-      <h2>${testData.title}</h2>
-      <p>${testData.description}</p>
-      <button onclick="startTest('${file}', 'test')">Start Timed</button>
-      <button onclick="startTest('${file}', 'practice')">Start Practice</button>
+      <h2>${test.title}</h2>
+      <p>${test.description}</p>
+      <button onclick="startTest('${test.file}', 'test')">Start Timed</button>
+      <button onclick="startTest('${test.file}', 'practice')">Start Practice</button>
     `;
     container.appendChild(card);
   }
