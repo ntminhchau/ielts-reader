@@ -24,6 +24,7 @@ async function loadTestList() {
   const manifest = await fetch('./tests/test_manifest.json').then(res => res.json());
   console.log("Manifest data:",manifest);
   console.log("▶️ Enter loadTestList()");
+  timedButton.addEventListener('click', () => startTest(test.file, 'timed'));
 try {
   const res = await fetch('./tests/test_manifest.json');
   console.log("Fetch status:", res.status);
