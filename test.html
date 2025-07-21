@@ -1,0 +1,25 @@
+<!-- test.html: IELTS-style interface for reading and answering -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IELTS Reading Test</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1 id="test-title">Test</h1>
+    <div id="timer-container" aria-live="polite"></div>
+  </header>
+  <main class="test-container">
+    <section class="left-pane" id="passage-pane" tabindex="0" aria-label="Reading passage"></section>
+    <section class="right-pane" id="questions-pane" tabindex="0" aria-label="Questions"></section>
+  </main>
+  <footer>
+    <div id="navigation-controls"></div>
+    <button id="submit-btn">Submit</button>
+  </footer>
+  <script src="scripts/app.js" type="module"></script>
+</body>
+</html>
