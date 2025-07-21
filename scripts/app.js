@@ -223,5 +223,26 @@ async function showReview() {
   });
 
   const bandScore = bandMap[totalCorrect] || 'N/A';
-  const summary = document.createElemen
+  const summary = document.createElement('div');
+  summary.className = 'question-card';
+  summary.innerHTML = `<h2>Score Summary</h2>
+    <p>Total Correct: ${totalCorrect}</p>
+    <p>Estimated IELTS Band: <strong>${bandScore}</strong></p>`;
+  reviewDiv.prepend(summary);
 
+  document.getElementById('retake-btn').onclick = () => {
+    localStorage.removeItem('userAnswers');
+    window.location.href = 'test.html';
+  };
+}
+
+// Helper to format question type labels
+function formatQuestionType(type) {
+  switch ((type || '').toLowerCase()) {
+    case 'true-false-not-given': return 'True / False / Not Given';
+    case 'matching': return 'Matching';
+    case 'multiple-choice': return 'Multiple Choice';
+    case 'short-answer': return 'Short Answer';
+    default: return 'Short Answer';
+  }
+}
